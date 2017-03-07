@@ -1,5 +1,5 @@
 function estimate_model_parameters(objective_function::Function,generation_function::Function,acceptance_function::Function,constraints_function::Function;
-  initial_parameter_guess::Array{Float64,1};maximum_number_of_iterations=20,show_trace=true)
+  initial_parameter_guess::Array{Float64,1},maximum_number_of_iterations=20,show_trace=true)
 
   # Initialize -
   iteration_counter = 1                 # setup the calculation -
