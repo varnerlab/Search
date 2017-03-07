@@ -6,6 +6,17 @@ Direct search methods are often slower to converge than gradient based methods, 
 In this package, we have encoded a generic direct search run loop that can be customized by the user to solve constrained and unconstrained
 parameter search problems.
 
+### Installation
+``Search`` is a Julia package that can be installed into your Julia installation using the ``Pkg.clone`` command:
+
+    Pkg.clone("https://github.com/varnerlab/Search.git")
+
+Once the package has been installed, you can use the functions in the ``Search`` package by issuing the command:
+
+    $ using Search
+
+from the REPL prompt or by adding this line to the top of any code that is calling ``Search`` package functions.
+
 ### Contents
 In the ``Search`` package,  we encode a generic run loop for a DSM. We allow the user to generate their own DSM by writing the run loop in terms of the user-defined functions.
 The main function of the ``Search`` package is ``estimate_model_parameters``:
@@ -46,14 +57,3 @@ objective_function | `` P x 1`` current parameter guess | objective value for th
 generation_function | ``P x 1`` previous parameter guess, constraints_function | new parameter guess that satisfies the constraints_function
 acceptance_function | current objective function value, objective_archive::Array{Float64,1} | ``{true | false}``, ``true`` if accept this error, otherwise ``false``
 constraints_function | current parameter guess | corrected parameter guess
-
-### Installation
-``Search`` is a Julia package that can be installed into your Julia installation using the ``Pkg.clone`` command:
-
-    Pkg.clone("https://github.com/varnerlab/Search.git")
-
-Once the package has been installed, you can use the functions in the ``Search`` package by issuing the command:
-
-    $ using Search
-
-from the REPL prompt or by adding this line to the top of any code that is calling ``Search`` package functions.
