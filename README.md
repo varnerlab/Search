@@ -10,7 +10,8 @@ parameter search problems.
 In the ``Search`` package,  we encode a generic run loop for a DSM. We allow the user to generate their own DSM by writing the run loop in terms of the user-defined functions.
 The main function of the ``Search`` package is ``estimate_model_parameters``:
 
-    (objective_archive,parameter_archive) = estimate_model_parameters(objective_function::Function,generation_function::Function,
+    (objective_archive,parameter_archive) = estimate_model_parameters(objective_function::Function,
+      generation_function::Function,
       acceptance_function::Function,
       constraints_function::Function,
       initial_parameter_guess::Array{Float64,1};
