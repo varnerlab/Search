@@ -40,6 +40,10 @@ function estimate_model_parameters(objective_function::Function,generation_funct
       push!(parameter_archive,parameter_wrapper)
       push!(objective_archive,objective_function_value)
 
+      # update the current parameter guess w/the best guess so far -
+      current_parameter_guess = new_parameter_guess
+
+      # send some stuff to the user -
       if (show_trace == true)
         msg = "Move with performance "*string(objective_function_value)*" has been accepted at iteration "*string(iteration_counter)
         println(msg)
